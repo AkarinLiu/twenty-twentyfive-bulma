@@ -1,0 +1,224 @@
+/* Button Styles Integration with Bulma CSS */
+/* This file integrates Bulma button styles with WordPress button blocks */
+
+/* WordPress Button Block Integration */
+.wp-block-button {
+  margin-bottom: 1rem;
+}
+
+/* Default Button Styles */
+.wp-block-button__link {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+/* Primary Button - Bulma is-primary */
+.wp-block-button__link:not(.has-background) {
+  background-color: #485fc7; /* Bulma primary color */
+  color: #fff;
+  border-color: #485fc7;
+}
+
+.wp-block-button__link:not(.has-background):hover {
+  background-color: #3a51bb;
+  border-color: #3a51bb;
+  color: #fff;
+}
+
+/* Secondary Button - Bulma is-link */
+.wp-block-button.is-style-outline .wp-block-button__link,
+.wp-block-button__link.has-secondary-background-color {
+  background-color: transparent;
+  color: #485fc7;
+  border-color: #485fc7;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:hover,
+.wp-block-button__link.has-secondary-background-color:hover {
+  background-color: #485fc7;
+  color: #fff;
+  border-color: #485fc7;
+}
+
+/* Success Button - Bulma is-success */
+.wp-block-button__link.has-success-background-color {
+  background-color: #48c78e;
+  color: #fff;
+  border-color: #48c78e;
+}
+
+.wp-block-button__link.has-success-background-color:hover {
+  background-color: #3ec487;
+  border-color: #3ec487;
+}
+
+/* Danger Button - Bulma is-danger */
+.wp-block-button__link.has-error-background-color {
+  background-color: #f14668;
+  color: #fff;
+  border-color: #f14668;
+}
+
+.wp-block-button__link.has-error-background-color:hover {
+  background-color: #f03a5f;
+  border-color: #f03a5f;
+}
+
+/* Warning Button - Bulma is-warning */
+.wp-block-button__link.has-warning-background-color {
+  background-color: #ffe08a;
+  color: rgba(0, 0, 0, 0.7);
+  border-color: #ffe08a;
+}
+
+.wp-block-button__link.has-warning-background-color:hover {
+  background-color: #ffdc7d;
+  border-color: #ffdc7d;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Info Button - Bulma is-info */
+.wp-block-button__link.has-info-background-color {
+  background-color: #3e8ed0;
+  color: #fff;
+  border-color: #3e8ed0;
+}
+
+.wp-block-button__link.has-info-background-color:hover {
+  background-color: #3a79b9;
+  border-color: #3a79b9;
+}
+
+/* Light Button - Bulma is-light */
+.wp-block-button__link.has-light-background-color {
+  background-color: #f5f5f5;
+  color: rgba(0, 0, 0, 0.7);
+  border-color: #dbdbdb;
+}
+
+.wp-block-button__link.has-light-background-color:hover {
+  background-color: #e8e8e8;
+  border-color: #cfcfcf;
+}
+
+/* Dark Button - Bulma is-dark */
+.wp-block-button__link.has-dark-background-color {
+  background-color: #363636;
+  color: #fff;
+  border-color: #363636;
+}
+
+.wp-block-button__link.has-dark-background-color:hover {
+  background-color: #2b2b2b;
+  border-color: #2b2b2b;
+}
+
+/* Button Sizes - Bulma size classes */
+.wp-block-button.is-style-small .wp-block-button__link {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.wp-block-button.is-style-large .wp-block-button__link {
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Full width button */
+.wp-block-button.is-style-full-width .wp-block-button__link {
+  display: block;
+  width: 100%;
+}
+
+/* Rounded buttons */
+.wp-block-button.is-style-rounded .wp-block-button__link {
+  border-radius: 290486px;
+}
+
+/* Button hover effects */
+.wp-block-button__link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+}
+
+/* Button focus states */
+.wp-block-button__link:focus {
+  outline: 2px solid #485fc7;
+  outline-offset: 2px;
+}
+
+/* Button active state */
+.wp-block-button__link:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(10, 10, 10, 0.1);
+}
+
+/* Disabled button state */
+.wp-block-button__link:disabled,
+.wp-block-button__link.disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Button group styles */
+.wp-block-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.wp-block-buttons.is-vertical {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .wp-block-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .wp-block-button {
+    width: 100%;
+  }
+
+  .wp-block-button__link {
+    width: 100%;
+  }
+}
+
+/* Animation for button loading states */
+@keyframes button-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.wp-block-button.is-loading .wp-block-button__link::after {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: button-loading 0.75s linear infinite;
+}

@@ -1,0 +1,338 @@
+/* Editor-specific Bulma CSS for Gutenberg Site Editor */
+/* This file contains styles specifically for the block editor interface */
+
+/* ===== EDITOR-SPECIFIC OVERRIDES ===== */
+
+/* Ensure Bulma styles don't conflict with editor UI */
+.block-editor-page .components-popover,
+.block-editor-page .components-modal__frame,
+.block-editor-page .interface-interface-skeleton {
+    z-index: 999999 !important;
+}
+
+/* Editor container adjustments */
+.block-editor-block-list__layout {
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
+        Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Block appender styling */
+.block-editor-button-block-appender {
+    background-color: #485fc7 !important;
+    color: white !important;
+    border-radius: 4px !important;
+}
+
+.block-editor-button-block-appender:hover {
+    background-color: #3a51bb !important;
+}
+
+/* Block toolbar adjustments */
+.block-editor-block-toolbar {
+    border: 1px solid #dbdbdb !important;
+    border-radius: 4px !important;
+}
+
+/* Block outline in editor */
+.block-editor-block-list__block:not([contenteditable]):focus::after {
+    outline: 2px solid #485fc7 !important;
+    outline-offset: 2px !important;
+}
+
+/* ===== BLOCK PREVIEW STYLING ===== */
+
+/* Group block preview */
+.block-editor-block-list__block[data-type="core/group"] .wp-block-group {
+    border: 1px dashed #dbdbdb;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.block-editor-block-list__block[data-type="core/group"].is-selected
+    .wp-block-group {
+    border-color: #485fc7;
+}
+
+/* Columns block preview */
+.block-editor-block-list__block[data-type="core/columns"] .wp-block-columns {
+    border: 1px dashed #e8e8e8;
+    padding: 0.25rem;
+    border-radius: 4px;
+}
+
+.block-editor-block-list__block[data-type="core/columns"].is-selected
+    .wp-block-columns {
+    border-color: #485fc7;
+}
+
+/* Button block preview */
+.block-editor-block-list__block[data-type="core/button"] .wp-block-button {
+    margin: 0.25rem 0;
+}
+
+/* Image block preview */
+.block-editor-block-list__block[data-type="core/image"] .wp-block-image {
+    border: 1px dashed #e8e8e8;
+    padding: 0.25rem;
+    border-radius: 4px;
+}
+
+.block-editor-block-list__block[data-type="core/image"].is-selected
+    .wp-block-image {
+    border-color: #485fc7;
+}
+
+/* ===== EDITOR-SPECIFIC UTILITY CLASSES ===== */
+
+/* Editor-only utility classes */
+.editor-styles-wrapper .is-editor-preview {
+    opacity: 0.8;
+}
+
+.editor-styles-wrapper .has-editor-guide {
+    background-color: rgba(72, 95, 199, 0.05);
+    border-left: 3px solid #485fc7;
+}
+
+/* Block spacing in editor */
+.editor-styles-wrapper .wp-block {
+    margin-bottom: 0.75rem;
+}
+
+/* ===== BLOCK CONTROLS STYLING ===== */
+
+/* Block inspector adjustments */
+.block-editor-block-inspector .components-base-control {
+    margin-bottom: 1rem;
+}
+
+.block-editor-block-inspector .components-select-control__input,
+.block-editor-block-inspector .components-text-control__input {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+/* Color palette in editor */
+.block-editor-panel-color-gradient-settings
+    .components-circular-option-picker__option {
+    border-radius: 4px;
+}
+
+/* =Typography controls */
+.block-editor-typography-controls .components-select-control__input {
+    min-width: 120px;
+}
+
+/* ===== LAYOUT ADJUSTMENTS FOR EDITOR ===== */
+
+/* Ensure proper spacing in editor */
+.editor-styles-wrapper .block-editor-block-list__layout {
+    padding: 15px;
+}
+
+/* Editor content width */
+.editor-styles-wrapper .wp-block {
+    max-width: none;
+}
+
+.editor-styles-wrapper .wp-block[data-align="wide"] {
+    max-width: 1200px;
+}
+
+.editor-styles-wrapper .wp-block[data-align="full"] {
+    max-width: none;
+}
+
+/* ===== BLOCK PLACEHOLDER STYLING ===== */
+
+/* Block placeholder states */
+.block-editor-block-list__block .components-placeholder {
+    border: 2px dashed #dbdbdb;
+    border-radius: 4px;
+    min-height: 80px;
+}
+
+.block-editor-block-list__block .components-placeholder.is-medium {
+    min-height: 150px;
+}
+
+.block-editor-block-list__block .components-placeholder.is-large {
+    min-height: 200px;
+}
+
+/* Placeholder focus states */
+.block-editor-block-list__block.is-selected .components-placeholder {
+    border-color: #485fc7;
+}
+
+/* ===== MEDIA BLOCKS IN EDITOR ===== */
+
+/* Media upload states */
+.block-editor-block-list__block[data-type^="core/"]
+    .components-form-file-upload {
+    border: 2px dashed #dbdbdb;
+    border-radius: 4px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.block-editor-block-list__block[data-type^="core/"].is-selected
+    .components-form-file-upload {
+    border-color: #485fc7;
+}
+
+/* ===== ACCESSIBILITY IN EDITOR ===== */
+
+/* High contrast mode for editor */
+@media (prefers-contrast: high) {
+    .block-editor-block-list__block:not([contenteditable]):focus::after {
+        outline: 3px solid #000 !important;
+    }
+
+    .block-editor-block-toolbar {
+        border: 2px solid #000 !important;
+    }
+}
+
+/* Reduced motion in editor */
+@media (prefers-reduced-motion: reduce) {
+    .block-editor-block-list__block {
+        transition: none !important;
+    }
+
+    .components-popover {
+        animation: none !important;
+    }
+}
+
+/* ===== MOBILE EDITOR ADJUSTMENTS ===== */
+
+@media (max-width: 782px) {
+    .editor-styles-wrapper .block-editor-block-list__layout {
+        padding: 15px;
+    }
+
+    .block-editor-block-toolbar {
+        flex-wrap: wrap;
+    }
+
+    .block-editor-block-list__block .components-placeholder {
+        min-height: 80px;
+    }
+}
+
+/* ===== DARK MODE SUPPORT FOR EDITOR ===== */
+
+/* This will be automatically applied when WordPress dark mode is enabled */
+[data-theme="dark"] .block-editor-block-list__block .components-placeholder {
+    border-color: #4a5568;
+}
+
+[data-theme="dark"]
+    .block-editor-block-list__block[data-type="core/group"]
+    .wp-block-group {
+    border-color: #4a5568;
+}
+
+[data-theme="dark"] .block-editor-block-toolbar {
+    border-color: #4a5568 !important;
+    background-color: #2d3748;
+}
+
+/* ===== BLOCK CATEGORY ICONS ===== */
+
+/* Visual enhancements for block categories */
+.block-editor-block-categories {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.block-editor-block-categories__category {
+    border-radius: 4px;
+    transition: background-color 0.15s ease;
+}
+
+.block-editor-block-categories__category:hover {
+    background-color: rgba(72, 95, 199, 0.1);
+}
+
+/* ===== CUSTOM BLOCK STYLES PREVIEW ===== */
+
+/* Preview custom block styles in editor */
+.block-editor-block-styles__item-preview {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.block-editor-block-styles__item.is-active
+    .block-editor-block-styles__item-preview {
+    border-color: #485fc7;
+    background-color: rgba(72, 95, 199, 0.1);
+}
+
+/* ===== PATTERN PREVIEWS ===== */
+
+/* Pattern preview styling */
+.block-editor-block-patterns-list__list-item {
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+}
+
+.block-editor-block-patterns-list__list-item:hover {
+    border-color: #485fc7;
+    box-shadow: 0 2px 8px rgba(72, 95, 199, 0.15);
+}
+
+/* ===== TEMPLATE PART EDITOR ===== */
+
+/* Template part editing */
+.block-editor-block-list__block[data-type="core/template-part"] {
+    border: 1px dashed #e8e8e8;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.block-editor-block-list__block[data-type="core/template-part"].is-selected {
+    border-color: #485fc7;
+}
+
+/* ===== SITE EDITOR SPECIFIC STYLES ===== */
+
+/* Site editor header */
+.edit-site-layout__header {
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+/* Site editor sidebar */
+.edit-site-sidebar {
+    border-left: 1px solid #e8e8e8;
+}
+
+/* Site editor canvas */
+.edit-site-visual-editor {
+    background-color: #f8f9fa;
+}
+
+/* ===== BLOCK BINDINGS EDITOR ===== */
+
+/* Block bindings UI */
+.block-editor-block-bindings__panel {
+    border-top: 1px solid #e8e8e8;
+    padding-top: 1rem;
+}
+
+.block-editor-block-bindings__item {
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.block-editor-block-bindings__item:hover {
+    border-color: #485fc7;
+    background-color: rgba(72, 95, 199, 0.05);
+}
